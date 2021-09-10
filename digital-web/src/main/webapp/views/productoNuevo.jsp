@@ -47,9 +47,9 @@
 		              <select name="categoria" class="form-select" id="country" required>
 		                <option value="">Seleccione...</option>
 		                <% 
-		                	List<Categorias> categorias = (List<Categorias>)request.getAttribute("categorias"); 
-							if(categorias != null){
-		                	for(Categorias categoria : categorias) {
+		                	List<Categorias> categoriass = (List<Categorias>)request.getAttribute("categorias"); 
+							if(categoriass != null){
+		                	for(Categorias categoria : categoriass) {
 								
 		                %>
 			                <option value="<%=categoria.getId()%>"><%=categoria.getDescripcion() %></option>

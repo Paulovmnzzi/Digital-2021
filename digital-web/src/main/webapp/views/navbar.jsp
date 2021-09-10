@@ -18,7 +18,7 @@
             Productos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/views/productoNuevo.jsp ">Agregar producto</a></li>
+            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/nuevoProducto">Agregar producto</a></li>
             <li><a class="dropdown-item" href="<%=request.getContextPath()%>/views/listadoGeneral.jsp">Listado General</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Desesperación</a></li>
