@@ -48,12 +48,14 @@
 		                <option value="">Seleccione...</option>
 		                <% 
 		                	List<Categorias> categorias = (List<Categorias>)request.getAttribute("categorias"); 
-		               
+							if(categorias != null){
 		                	for(Categorias categoria : categorias) {
+								
 		                %>
 			                <option value="<%=categoria.getId()%>"><%=categoria.getDescripcion() %></option>
 						<%
 		                	}
+							}
 						%>
 							                
 		              </select>
