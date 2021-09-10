@@ -1,1 +1,0 @@
-web: java $JAVA_OPTS -jar digital-web/target/dependency/webapp-runner.jar --port $PORT digital-web/target/*.war
