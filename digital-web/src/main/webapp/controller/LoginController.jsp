@@ -8,7 +8,7 @@
 
 	LoginService login = new LoginServiceImpl();
 	User user = login.getUserByUserName(username);
-	if(user.getContraseña().equals(password)){
+	if(user.getPassword().equals(password)){
 		out.print("exito");
 	}
 

@@ -23,7 +23,7 @@ public class LoginServiceImpl extends AbstractBaseService<User> implements Login
 		try {
 			User usuario = this.dao.findByUsername("where usuario='" + user + "'");
 			if(usuario == null) {
-				throw new ServiceException("Usuario/contraseña incorrectos", null);
+				throw new ServiceException("Usuario/Password incorrectos", null);
 			}
 			return usuario;
 		} catch (GenericException e) {

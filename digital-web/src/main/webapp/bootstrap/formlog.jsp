@@ -15,7 +15,7 @@
 					</div>
 					<div class="col-md-5">
 						<label for="validationCustom02" class="form-label">Password</label>
-						<input type="password" placeholder="Contraseña" name="password" class="form-control" id="validationCustom02"
+						<input type="password" placeholder="Password" name="password" class="form-control" id="validationCustom02"
 							value="" required>
 						<div class="valid-feedback">Looks good!</div>
 					</div>

@@ -45,13 +45,13 @@ public class LoginServlet extends HttpServlet{
 				
 				User user = login.getUserByUserName(username);
 				if(user != null) {	
-					if(password.equals(user.getContraseña())) {
+					if(password.equals(user.getPassword())) {
 							req.getSession().setAttribute(KeysEnum.USUARIO.name(), user);
 							target = ViewEnums.LOGIN_SUCCESS;
 					}else {
-						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/contraseña es incorrecto");
+						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/Password es incorrecto");
 					}
-					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/contraseña es incorrecto");
+					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/Password es incorrecto");
 				}
 			}
 			} catch (ServiceException | SQLException e) {

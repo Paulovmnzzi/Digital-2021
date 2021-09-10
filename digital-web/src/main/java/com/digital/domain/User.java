@@ -3,22 +3,22 @@ package com.digital.domain;
 public class User implements Entity {
 
 	private String usuario;
-	private String contraseña;
+	private String password;
 	private int id;
 
 	public User() {
 	}
 
-	public User(String usuario, String contraseña) {
+	public User(String usuario, String password) {
 		super();
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.password = password;
 	}
 
-	public User(int id, String usuario, String contraseña) {
+	public User(int id, String usuario, String password) {
 		this.id = id;
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.password = password;
 	}
 
 	public String getUsuario() {
@@ -29,12 +29,12 @@ public class User implements Entity {
 		this.usuario = usuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class User implements Entity {
 
 	@Override
 	public String toString() {
-		return "User [usuario=" + usuario + ", contraseña=" + contraseña + ", id=" + id + "]";
+		return "User [usuario=" + usuario + ", Password=" + password + ", id=" + id + "]";
 	}
 
 }

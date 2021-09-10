@@ -25,9 +25,9 @@ public class UserDaoImpl extends JDBCBaseDaoImpl<User> implements UserDao{
 		
 		int id = res.getInt(1);
 		String nombre = res.getString(2);
-		String contraseña = res.getString(3);
+		String Password = res.getString(3);
 		
-		User usuario = new User(id, nombre, contraseña);
+		User usuario = new User(id, nombre, Password);
 		
 		return usuario;
 	}
