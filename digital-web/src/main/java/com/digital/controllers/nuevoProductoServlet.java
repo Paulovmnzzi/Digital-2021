@@ -2,6 +2,7 @@ package com.digital.controllers;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.bouncycastle.asn1.icao.CscaMasterList;
 
 import com.digital.dao.impl.ColumnEnum;
+import com.digital.domain.Categorias;
 import com.digital.domain.Producto;
 import com.digital.enums.ViewEnums;
 import com.digital.service.CategoriasService;
@@ -66,7 +68,10 @@ public class nuevoProductoServlet extends HttpServlet {
 	}
 
 	private void cargarCombos(HttpServletRequest req) throws ServiceException {
-		req.setAttribute("categorias", cs.findAll());
+		List<Categorias> clist = cs.findAll();
+		if(clist != null) {
+			req.setAttribute("categorias", clist);
+		}
 	}
 	
 	
