@@ -1,11 +1,11 @@
 package com.digital.domain;
 
-public class User implements Entity{
+public class User implements Entity {
 
 	private String usuario;
 	private String contraseña;
 	private int id;
-	
+
 	public User() {
 	}
 
@@ -37,10 +37,12 @@ public class User implements Entity{
 		this.contraseña = contraseña;
 	}
 
+	@Override
 	public int getId() {
 		return id;
 	}
 
+	@Override
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -50,6 +52,4 @@ public class User implements Entity{
 		return "User [usuario=" + usuario + ", contraseña=" + contraseña + ", id=" + id + "]";
 	}
 
-	
-	
 }
