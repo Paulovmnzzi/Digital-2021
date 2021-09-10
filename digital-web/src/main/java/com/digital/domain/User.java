@@ -4,7 +4,7 @@ public class User implements Entity {
 
 	private String usuario;
 	private String password;
-	private int id;
+	private Long id;
 
 	public User() {
 	}
@@ -15,7 +15,7 @@ public class User implements Entity {
 		this.password = password;
 	}
 
-	public User(int id, String usuario, String password) {
+	public User(Long id, String usuario, String password) {
 		this.id = id;
 		this.usuario = usuario;
 		this.password = password;
@@ -38,12 +38,12 @@ public class User implements Entity {
 	}
 
 	@Override
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 	@Override
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

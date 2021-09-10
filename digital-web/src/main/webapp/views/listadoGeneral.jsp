@@ -1,4 +1,4 @@
-<%@page import="com.digital.dao.util.ColumnEnum"%>
+<%@page import="com.digital.dao.impl.ColumnEnum"%>
 <%@page import="java.util.List"%>
 <%@page import="com.digital.domain.Producto"%>
 <%@page import="java.util.ArrayList"%>

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.digital.controllers.orden.OrdenAsc;
 import com.digital.controllers.orden.OrdenDesc;
-import com.digital.dao.util.ColumnEnum;
+import com.digital.dao.impl.ColumnEnum;
 import com.digital.domain.Producto;
 import com.digital.enums.KeysEnum;
 import com.digital.enums.ViewEnums;

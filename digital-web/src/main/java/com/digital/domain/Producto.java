@@ -1,29 +1,62 @@
 package com.digital.domain;
 
+import java.util.Date;
+
 public class Producto implements Entity {
 
-	private int id;
+	private Long id;
 	private String titulo;
-	private int codigo;
-	private int precio;
+	private String codigo;
+	private Date fechaCreacion;
+	private Double precio;
+	private Long stock;
+	private Long marcasId;
+	private Long categoriasId;
 
 	public Producto() {
-		// TODO Auto-generated constructor stub
 	}
-	
-	public Producto(int id, String titulo, int codigo, int precio) {
+
+	public Producto(Long id, String titulo, String codigo, Date fechaCreacion, Double precio, Long stock, Long marcasId,
+			Long categoriasId) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.codigo = codigo;
+		this.fechaCreacion = fechaCreacion;
 		this.precio = precio;
+		this.stock = stock;
+		this.marcasId = marcasId;
+		this.categoriasId = categoriasId;
 	}
-	
-	public Producto(String titulo, int codigo, int precio) {
+
+	public Producto(String titulo, String codigo, Date fechaCreacion, Double precio, Long stock, Long marcasId,
+			Long categoriasId) {
+		super();
+		this.titulo = titulo;
+		this.codigo = codigo;
+		this.fechaCreacion = fechaCreacion;
+		this.precio = precio;
+		this.stock = stock;
+		this.marcasId = marcasId;
+		this.categoriasId = categoriasId;
+	}
+
+	public Producto(String titulo, String codigo, Double precio, Long stock, Long marcasId, Long categoriasId) {
 		super();
 		this.titulo = titulo;
 		this.codigo = codigo;
 		this.precio = precio;
+		this.stock = stock;
+		this.marcasId = marcasId;
+		this.categoriasId = categoriasId;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {
@@ -34,33 +67,59 @@ public class Producto implements Entity {
 		this.titulo = titulo;
 	}
 
-	public Integer getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
 
-	@Override
-	public int getId() {
-		// TODO Auto-generated method stub
-		return id;
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Long getStock() {
+		return stock;
+	}
+
+	public void setStock(Long stock) {
+		this.stock = stock;
+	}
+
+	public Long getMarcasId() {
+		return marcasId;
+	}
+
+	public void setMarcasId(Long marcasId) {
+		this.marcasId = marcasId;
+	}
+
+	public Long getCategoriasId() {
+		return categoriasId;
+	}
+
+	public void setCategoriasId(Long categoriasId) {
+		this.categoriasId = categoriasId;
 	}
 
 	@Override
-	public void setId(int id) {
-		// TODO Auto-generated method stub
-
+	public String toString() {
+		return "Producto [id=" + id + ", titulo=" + titulo + ", codigo=" + codigo + ", fechaCreacion=" + fechaCreacion
+				+ ", precio=" + precio + ", stock=" + stock + ", marcasId=" + marcasId + ", categoriasId="
+				+ categoriasId + "]";
 	}
 
 }

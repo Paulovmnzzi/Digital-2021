@@ -108,7 +108,7 @@ public abstract class JDBCBaseDaoImpl<T> implements GenericDao<T> {
 				try(ResultSet resultSet = pst.getGeneratedKeys()) {
 					
 					if(resultSet.next()) {
-						((Entity)entity).setId((int) resultSet.getLong(1));
+						((Entity)entity).setId((long) resultSet.getLong(1));
 					}
 				}
 			}

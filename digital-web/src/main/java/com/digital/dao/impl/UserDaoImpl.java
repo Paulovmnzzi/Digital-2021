@@ -1,4 +1,4 @@
-package com.digital.dao.util;
+package com.digital.dao.impl;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +23,7 @@ public class UserDaoImpl extends JDBCBaseDaoImpl<User> implements UserDao{
 	@Override
 	public User getEntityFromResultSet(ResultSet res) throws SQLException {
 		
-		int id = res.getInt(1);
+		Long id = (long) res.getInt(1);
 		String nombre = res.getString(2);
 		String Password = res.getString(3);
 		

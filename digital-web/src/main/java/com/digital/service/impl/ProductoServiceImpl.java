@@ -1,6 +1,6 @@
 package com.digital.service.impl;
 
-import com.digital.dao.util.ProductoDaoImpl;
+import com.digital.dao.impl.ProductoDaoImpl;
 import com.digital.domain.Producto;
 import com.digital.service.ProductoService;
 

@@ -3,7 +3,7 @@ package com.digital.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.digital.dao.util.ColumnEnum;
+import com.digital.dao.impl.ColumnEnum;
 import com.digital.exception.GenericException;
 
 public interface GenericService<T> {

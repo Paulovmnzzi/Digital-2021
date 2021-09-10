@@ -20,7 +20,7 @@ public interface GenericDao<T> {
 	
 	public void update(T entity) throws DuplicatedException, GenericException;
 
-	public List<T> findAllBy(String criteria, String columna) throws GenericException;
+	public List<T> findAllBy(String titulo, String columna) throws GenericException;
 	
 	public T findByUsername(String sqlWhere) throws GenericException, SQLException;
 }

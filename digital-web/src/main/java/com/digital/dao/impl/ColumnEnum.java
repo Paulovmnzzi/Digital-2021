@@ -1,4 +1,4 @@
-package com.digital.dao.util;
+package com.digital.dao.impl;
 
 public enum ColumnEnum {
 

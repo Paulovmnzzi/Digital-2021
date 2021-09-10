@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import com.digital.dao.GenericDao;
 import com.digital.dao.JDBCBaseDaoImpl;
-import com.digital.dao.util.UserDaoImpl;
+import com.digital.dao.impl.UserDaoImpl;
 import com.digital.domain.User;
 import com.digital.exception.GenericException;
 import com.digital.service.LoginService;
