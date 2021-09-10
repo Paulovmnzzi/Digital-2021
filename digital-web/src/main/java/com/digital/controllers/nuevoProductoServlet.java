@@ -41,6 +41,7 @@ public class nuevoProductoServlet extends HttpServlet {
 		String marca = req.getParameter("marca");
 		String stock = req.getParameter("stock");
 		
+		if(titulo != null) {
 		Long codigoAux = Long.parseLong(codigo);
 		Double precioAux = Double.parseDouble(precio);
 		Long stockAux = Long.parseLong(stock);
@@ -53,6 +54,7 @@ public class nuevoProductoServlet extends HttpServlet {
 		ProductoService prod = new ProductoServiceImpl();
 		
 			prod.save(nuevoProducto);
+		}
 			getServletContext().getRequestDispatcher(ViewEnums.NUEVO_PRODUCTO.getView()).forward(req, resp);
 		} catch (ServiceException e) {
 			// TODO Auto-generated catch block

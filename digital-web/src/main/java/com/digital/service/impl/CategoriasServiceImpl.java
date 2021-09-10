@@ -14,14 +14,6 @@ public class CategoriasServiceImpl extends AbstractBaseService<Categorias> imple
 		super(new CategoriasDaoImpl());
 	}
 	
-	@Override
-	public List<Categorias> findAll() throws ServiceException {
-		try {
-			return this.dao.findAll();
-		} catch (GenericException e) {
-			throw new ServiceException("no se pudo obtener la lista mi rey", e.getCause());
-		}
-	}
-	
+
 	
 }
