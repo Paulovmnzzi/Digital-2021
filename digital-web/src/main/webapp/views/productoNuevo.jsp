@@ -1,3 +1,4 @@
+<%@page import="com.digital.domain.Marcas"%>
 <%@page import="com.digital.domain.Categorias"%>
 <%@page import="java.util.List"%>
 <html>
@@ -36,12 +37,6 @@
 	  			<span class="input-group-text" id="basic-addon1">Stock</span>
 		  		<input type="text" name="stock" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
-			<div class="input-group mb-3">
-	  			<span class="input-group-text" id="basic-addon1">Marca</span>
-		  		<input type="text" name="marca" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
-			</div>
-			
-			
 			<div class="form-group">
 		              <label for="country" class="form-label">Categoria</label>
 		              <select name="categoria" class="form-select" id="country" required>
@@ -50,18 +45,30 @@
 		                	List<Categorias> categoriass = (List<Categorias>)request.getAttribute("categorias"); 
 							if(categoriass != null){
 		                	for(Categorias categoria : categoriass) {
-								
 		                %>
 			                <option value="<%=categoria.getId()%>"><%=categoria.getDescripcion() %></option>
 						<%
 		                	}
-							}
+						}
 						%>
-							                
+						</select>
+						 <label for="country" class="form-label mt-2">Marca</label>
+						<select name="marca" class="form-select" id="country" required>
+						<option value="">Seleccione una marca</option>
+		                <% 
+		                	List<Marcas> marcas = (List<Marcas>)request.getAttribute("marcas"); 
+							if(marcas != null){
+		                	for(Marcas marca : marcas) {
+		                %>
+			                <option value="<%=marca.getId()%>"><%=marca.getDescripcion() %></option>
+						<%
+		                	}
+						}
+						%>
 		              </select>
 			
 			
-			<div class="col-12">
+			<div class="col-12 mt-3">
 						<button class="btn btn-primary" type="submit">Agregar</button>
 			</div>
 		</div>

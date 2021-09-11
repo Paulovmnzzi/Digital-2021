@@ -5,42 +5,45 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.digital.dao.CategoriaDao;
 import com.digital.dao.JDBCBaseDaoImpl;
-import com.digital.domain.Categorias;
+import com.digital.dao.MarcasDao;
+import com.digital.domain.Marcas;
 import com.digital.exception.GenericException;
 
-public class CategoriasDaoImpl extends JDBCBaseDaoImpl<Categorias> implements CategoriaDao {
+public class MarcasDaoImpl extends JDBCBaseDaoImpl<Marcas> implements MarcasDao {
 
-	public CategoriasDaoImpl() {
-		super("categorias");
+	public MarcasDaoImpl() {
+		super("marcas");
 	}
 
 	@Override
-	public List<Categorias> findAllBy(String titulo, String columna) throws GenericException {
+	public List<Marcas> findAllBy(String titulo, String columna) throws GenericException {
 		String sql = columna + " like '%" + titulo + "%'"; 
 		return super.findAllBy(sql);
 	}
 
 	@Override
-	public Categorias getEntityFromResultSet(ResultSet res) throws SQLException {
-		
+	public Marcas getEntityFromResultSet(ResultSet res) throws SQLException {
 		Long id = res.getLong(1);
 		String descripcion = res.getString(2);
 		String codigo = res.getString(3);
 		Long habilitada = res.getLong(4);
 		
-		return new Categorias(id, descripcion, codigo, habilitada);
+		Marcas marca = new Marcas(id, descripcion, codigo, habilitada);
+		
+		return marca;
 	}
 
 	@Override
 	protected String getUpdateSQL() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	protected void update(PreparedStatement pst, Categorias entity) throws SQLException {
-		
+	protected void update(PreparedStatement pst, Marcas entity) throws SQLException {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -49,13 +52,12 @@ public class CategoriasDaoImpl extends JDBCBaseDaoImpl<Categorias> implements Ca
 	}
 
 	@Override
-	public void save(PreparedStatement pst, Categorias entity) throws SQLException {
+	public void save(PreparedStatement pst, Marcas entity) throws SQLException {
+
 		pst.setString(1, entity.getDescripcion());
 		pst.setString(2, entity.getCodigo());
 		pst.setLong(3, entity.getHabilitada());
 		
 	}
-	
-	
 
 }

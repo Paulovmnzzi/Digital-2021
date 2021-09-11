@@ -14,7 +14,7 @@ import com.digital.exception.GenericException;
 public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements ProductoDao {
 
 	public ProductoDaoImpl() {
-		super("productos");
+		super("articulos");
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements Produc
 
 	@Override
 	public String getSaveSQL() {
-		return "(titulo, codigo, precio) values(?,?,?)";
+		return "(titulo, codigo, fecha_creacion, precio, stock, marcas_id, categorias_id) values(?,?,?,?,?,?,?)";
 	}
 
 	@Override

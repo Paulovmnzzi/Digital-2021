@@ -15,19 +15,23 @@ import org.bouncycastle.asn1.icao.CscaMasterList;
 
 import com.digital.dao.impl.ColumnEnum;
 import com.digital.domain.Categorias;
+import com.digital.domain.Marcas;
 import com.digital.domain.Producto;
 import com.digital.enums.ViewEnums;
 import com.digital.service.CategoriasService;
 import com.digital.service.GenericService;
+import com.digital.service.MarcasService;
 import com.digital.service.ProductoService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.CategoriasServiceImpl;
+import com.digital.service.impl.MarcasServiceImpl;
 import com.digital.service.impl.ProductoServiceImpl;
 @WebServlet("/nuevoProducto")
 public class nuevoProductoServlet extends HttpServlet {
 	
 	
 	CategoriasService cs = new CategoriasServiceImpl();
+	MarcasService ms = new MarcasServiceImpl();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -69,8 +73,10 @@ public class nuevoProductoServlet extends HttpServlet {
 
 	private void cargarCombos(HttpServletRequest req) throws ServiceException {
 		List<Categorias> clist = cs.findAll();
-		if(clist != null) {
+		List<Marcas> mlist = ms.findAll();
+		if(clist != null || mlist != null ) {
 			req.setAttribute("categorias", clist);
+			req.setAttribute("marcas", mlist);
 		}
 	}
 	
