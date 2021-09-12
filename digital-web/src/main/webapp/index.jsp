@@ -21,7 +21,8 @@
 					<h5 class="card-title">Librería central</h5>
 					<p class="card-text">Bienvenido/a al sistema administrativo</p>
 					<a href="<%=request.getContextPath()%>/views/login.jsp"
-						class="btn btn-primary bg-opacity-75">Inicio de sesión</a> <a href="#"
+						class="btn btn-primary bg-opacity-75">Inicio de sesión</a> 
+						<a href="<%=request.getContextPath() %>/views/Registro.jsp"
 						class="btn btn-primary bg-opacity-75">Registrarse</a>
 				</div>
 			</div>
