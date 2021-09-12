@@ -1,3 +1,9 @@
+<%@page import="com.digital.domain.Categorias"%>
+<%@page import="com.digital.service.impl.CategoriasServiceImpl"%>
+<%@page import="com.digital.service.CategoriasService"%>
+<%@page import="com.digital.domain.Marcas"%>
+<%@page import="com.digital.service.impl.MarcasServiceImpl"%>
+<%@page import="com.digital.service.MarcasService"%>
 <%@page import="com.digital.dao.impl.ColumnEnum"%>
 <%@page import="java.util.List"%>
 <%@page import="com.digital.domain.Producto"%>
@@ -6,6 +12,13 @@
 <%@page import="com.digital.service.impl.ProductoServiceImpl"%>
 <html>
 <head>
+<% 
+MarcasService ms = new MarcasServiceImpl();
+CategoriasService cs = new CategoriasServiceImpl();	
+ArrayList<Marcas> mark = (ArrayList<Marcas>) ms.findAll();
+ArrayList<Categorias> categor = (ArrayList<Categorias>)cs.findAll();
+
+%>
 <%@include file="/bootstrap/style.jsp"%>
 <title>Inicio de sesion</title>
 <link rel="icon" type="image/png"
@@ -26,6 +39,10 @@
 							<th scope="col">Titulo</th>
 							<th scope="col">Código</th>
 							<th scope="col">Precio</th>
+							<th scope="col">Stock</th>
+							<th scope="col">Categoria</th>
+							<th scope="col">Marca</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -35,12 +52,30 @@
 						productoss = (ArrayList)ps.findAll();
 					}
 					%>
-					<%for(Producto product : productoss){ %>
+					<%for(Producto product : productoss){
+						String marca1 = null;
+						String ktegor1 = null;
+						for(Marcas marca : mark){
+							if(marca.getId() == product.getMarcasId()){
+								marca1 = marca.getDescripcion();
+							}
+						}
+						for(Categorias categoria : categor){
+							if(categoria.getId() == product.getCategoriasId()){
+								ktegor1 = categoria.getDescripcion();
+							}
+						}
+						
+						
+						%>
 						<tr>
 							<th scope="row"> <%=product.getId() %> </th>
 							<td> <%=product.getTitulo() %> </td>
 							<td><%=product.getCodigo() %></td>
 							<td><%=product.getPrecio() %></td>
+							<td><%=product.getStock() %></td>
+							<td><%=ktegor1 %></td>
+							<td><%=marca1%></td>
 							<td>
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 										<a class="btn btn-danger me-md-2" href="<%=request.getContextPath()%>/EliminarProducto?id=<%=product.getId()%>" role="button">Eliminar</a> 
