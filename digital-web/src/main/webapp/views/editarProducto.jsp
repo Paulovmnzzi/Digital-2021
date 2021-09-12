@@ -26,36 +26,36 @@
 				method="get">
 				<div class="col-9">
 					<div class="input-group mb-3 mt-0">
-						<span class="input-group-text" id="basic-addon1">ID</span> <input
+						<span class="input-group-text col-2" id="basic-addon1">ID</span> <input
 							type="text" name="id" class="form-control"
 							 aria-label="Username" value="<%=edit.getId() %>"
 							aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group mb-3 mt-0">
-						<span class="input-group-text" id="basic-addon1">Titulo</span> <input
+						<span class="input-group-text col-2" id="basic-addon1">Titulo</span> <input
 							type="text" name="titulo" class="form-control" 
 							 aria-label="Username" value="<%=edit.getTitulo() %>"
 							aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">Código</span> <input
+						<span class="input-group-text col-2" id="basic-addon1">Código</span> <input
 							type="text" name="codigo" class="form-control"
 							 aria-label="Username" value="<%=edit.getCodigo()%>"
 							aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">Precio - $</span>
+						<span class="input-group-text col-2" id="basic-addon1">Precio - $</span>
 						<input type="text" name="precio" class="form-control"
 							 aria-label="Username" value="<%=edit.getPrecio() %>"
 							aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group mb-3">
-						<span class="input-group-text" id="basic-addon1">Stock</span> <input
+						<span class="input-group-text col-2" id="basic-addon1">Stock</span> <input
 							type="text" name="stock" class="form-control"  value="<%=edit.getStock() %>"
 							aria-label="Username" aria-describedby="basic-addon1">
 					</div>
 					<div class="form-group">
-						<label for="country" class="form-label">Categoria</label> <select
+						<label for="country" class="form-label col-2">Categoria</label> <select
 							name="categoria" class="form-select" id="country" required>
 							<option value="">Seleccione...</option>
 							<%
@@ -69,7 +69,7 @@
 								}
 							}
 							%>
-						</select> <label for="country" class="form-label mt-2">Marca</label> <select
+						</select> <label for="country" class="form-label mt-2 col-2">Marca</label> <select
 							name="marca" class="form-select" id="country" required>
 							<option value="">Seleccione una marca</option>
 							<%
