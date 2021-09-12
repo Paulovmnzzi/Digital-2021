@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.digital.domain.User;
 import com.digital.enums.KeysEnum;
 import com.digital.enums.ViewEnums;
+import com.digital.exception.GenericException;
 import com.digital.service.LoginService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.LoginServiceImpl;
@@ -43,7 +44,7 @@ public class LoginServlet extends HttpServlet{
 				req.setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/password vacios");
 			}else {
 				
-				User user = login.getUserByUserName(username);
+				User user = login.findByUsername(username);
 				if(user != null) {	
 					if(password.equals(user.getPassword())) {
 							req.getSession().setAttribute(KeysEnum.USUARIO.name(), user);
@@ -54,7 +55,7 @@ public class LoginServlet extends HttpServlet{
 					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/Password es incorrecto");
 				}
 			}
-			} catch (ServiceException | SQLException e) {
+			} catch (SQLException | GenericException e) {
 				req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), e.getMessage());
 			}
 		

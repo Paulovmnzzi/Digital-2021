@@ -25,7 +25,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contacto estrecho</a>
+          <a class="nav-link" href="<%=request.getContextPath() %>/views/Registro.jsp" tabindex="-1" aria-disabled="false">Registrarse</a>
         </li>
       </ul>
       <form action="<%=request.getContextPath()%>/buscarProducto" class="d-flex align-items-center mt-2" method="get">

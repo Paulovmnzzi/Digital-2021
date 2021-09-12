@@ -25,7 +25,7 @@
 		      <div class="container-fluid py-5">
 		        <h1 class="display-5 fw-bold">Bienvenido</h1>
 		        <p class="col-md-8 fs-4">Sistema de administración de productos</p>
-     			<a class="btn btn-primary btn-lg" href="<%=request.getContextPath()%>/views/ListadoGeneral.jsp" role="button">
+     			<a class="btn btn-primary btn-lg" href="<%=request.getContextPath()%>/views/listadoGeneral.jsp" role="button">
      				Ver Listado
      			</a> 
 		      </div>

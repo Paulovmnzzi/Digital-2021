@@ -14,23 +14,15 @@ public class LoginServiceImpl extends AbstractBaseService<User> implements Login
 
 	public LoginServiceImpl() {
 		super(new UserDaoImpl());
-		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public User findByUsername(String sqlWhere) throws GenericException, SQLException {
+		return super.findByUsername(sqlWhere);
 	}
 
 	
-	@Override
-	public User getUserByUserName(String user) throws ServiceException, SQLException {
-		try {
-			User usuario = this.dao.findByUsername("where usuario='" + user + "'");
-			if(usuario == null) {
-				throw new ServiceException("Usuario/Password incorrectos", null);
-			}
-			return usuario;
-		} catch (GenericException e) {
-			throw new ServiceException(e.getMessage(), e);
-		}
-	}
-
+	
 
 
 }

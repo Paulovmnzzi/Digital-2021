@@ -2,7 +2,7 @@
  		<div class="row">
  		<div class="col-6">
  		<br>
-		<img alt="" src="../assets/login.svg">
+		<img alt="" src="../assets/login.svg" class="ms-5 mt-4 ps-5">
  		</div>
  			<div class="col-6 d-flex justify-content-center d-flex align-items-center">
  			<br>

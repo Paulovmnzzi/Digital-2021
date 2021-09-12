@@ -173,7 +173,7 @@ public abstract class JDBCBaseDaoImpl<T> implements GenericDao<T> {
 		T entity = null;
 		
 		Connection conex = AdministradorDeConexiones.obtenerConexion();
-		String sql = "Select * from " + this.tabla + " " + sqlWhere;
+		String sql = "Select * from " + this.tabla + " where " + sqlWhere;
 		PreparedStatement pst = conex.prepareStatement(sql);
 		ResultSet result = pst.executeQuery();
 		if(result.next()) {

@@ -10,25 +10,26 @@ import com.digital.dao.UserDao;
 import com.digital.domain.User;
 import com.digital.exception.GenericException;
 
-public class UserDaoImpl extends JDBCBaseDaoImpl<User> implements UserDao{
+public class UserDaoImpl extends JDBCBaseDaoImpl<User> implements UserDao {
 
 	public UserDaoImpl() {
 		super("users");
 	}
 
-	public User getUserByUserName(String user) {
-		return null;
+	public User findByUsername(String user) throws GenericException, SQLException {
+		String sql = "username like '%" + user + "%'";
+		return super.findByUsername(sql);
 	}
 
 	@Override
 	public User getEntityFromResultSet(ResultSet res) throws SQLException {
-		
+
 		Long id = (long) res.getInt(1);
 		String nombre = res.getString(2);
 		String Password = res.getString(3);
-		
+
 		User usuario = new User(id, nombre, Password);
-		
+
 		return usuario;
 	}
 
@@ -43,19 +44,18 @@ public class UserDaoImpl extends JDBCBaseDaoImpl<User> implements UserDao{
 
 	@Override
 	public String getSaveSQL() {
-		return null;
+		return "(username, password) values (?,?)";
 	}
 
 	@Override
 	public void save(PreparedStatement pst, User entity) throws SQLException {
+		pst.setString(1, entity.getUsuario());
+		pst.setString(2, entity.getPassword());
 	}
 
 	@Override
 	public List<User> findAllBy(String criteria, String columna) throws GenericException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
-	
 }
