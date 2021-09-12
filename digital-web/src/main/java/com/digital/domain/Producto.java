@@ -16,6 +16,18 @@ public class Producto implements Entity {
 	public Producto() {
 	}
 
+	public Producto(Long id, String titulo, String codigo, Double precio, Long stock, Long marcasId,
+			Long categoriasId) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.codigo = codigo;
+		this.precio = precio;
+		this.stock = stock;
+		this.marcasId = marcasId;
+		this.categoriasId = categoriasId;
+	}
+
 	public Producto(Long id, String titulo, String codigo, Date fechaCreacion, Double precio, Long stock, Long marcasId,
 			Long categoriasId) {
 		super();

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.digital.dao.CategoriaDao;
-import com.digital.dao.JDBCBaseDaoImpl;
 import com.digital.domain.Categorias;
 import com.digital.exception.GenericException;
 

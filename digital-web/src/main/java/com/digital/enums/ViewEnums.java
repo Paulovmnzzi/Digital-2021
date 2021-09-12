@@ -7,7 +7,7 @@ public enum ViewEnums {
 	UPLOAD("/views/upload.jsp"),
 	LISTADO_GENERAL("/views/listadoGeneral.jsp"),
 	NUEVO_PRODUCTO("/views/productoNuevo.jsp"), 
-	EDITAR_PRODUCTO("/views/editar.jsp"), 
+	EDITAR_PRODUCTO("/views/editarProducto.jsp"), 
 	UPLOAD_PREVIEW("/views/preview.jsp"), 
 	RESULTADO_PREVIEW("/views/resultadoPreview.jsp"), 
 	REGISTRO("/views/Registro.jsp");

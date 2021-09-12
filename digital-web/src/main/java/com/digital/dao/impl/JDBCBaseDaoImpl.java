@@ -1,4 +1,4 @@
-package com.digital.dao;
+package com.digital.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.sql.Connection;
@@ -9,6 +9,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.digital.dao.AdministradorDeConexiones;
+import com.digital.dao.GenericDao;
 import com.digital.domain.Entity;
 import com.digital.exception.DuplicatedException;
 import com.digital.exception.GenericException;

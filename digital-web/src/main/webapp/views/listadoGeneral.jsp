@@ -44,7 +44,7 @@
 							<td>
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 										<a class="btn btn-danger me-md-2" href="<%=request.getContextPath()%>/EliminarProducto?id=<%=product.getId()%>" role="button">Eliminar</a> 
-										<a class="btn btn-primary" href="<%=request.getContextPath()%>/controllers/CargarParaEditarProductoServlet?id=<%=product.getId()%>" role="button">Editar</a> 
+										<a class="btn btn-primary" href="<%=request.getContextPath()%>/CargarEditarProducto?id=<%=product.getId()%>" role="button">Editar</a> 
 									</div>
 							</td>
 						</tr>

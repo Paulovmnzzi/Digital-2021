@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.digital.dao.JDBCBaseDaoImpl;
 import com.digital.dao.UserDao;
 import com.digital.domain.User;
 import com.digital.exception.GenericException;

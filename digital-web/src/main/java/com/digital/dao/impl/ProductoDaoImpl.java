@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-import com.digital.dao.JDBCBaseDaoImpl;
 import com.digital.dao.ProductoDao;
 import com.digital.domain.Producto;
 import com.digital.exception.GenericException;
@@ -35,13 +34,16 @@ public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements Produc
 
 	@Override
 	protected String getUpdateSQL() {
-		// TODO Auto-generated method stub
-		return null;
+		return "titulo=?, precio=?, stock=?, marcas_id=?,categorias_id=?";
 	}
 
 	@Override
 	protected void update(PreparedStatement pst, Producto entity) throws SQLException {
-		
+		pst.setString(1,entity.getTitulo());
+		pst.setDouble(2, entity.getPrecio());
+		pst.setLong(3, entity.getStock());
+		pst.setLong(4, entity.getMarcasId());
+		pst.setLong(5, entity.getCategoriasId());
 	}
 
 	@Override

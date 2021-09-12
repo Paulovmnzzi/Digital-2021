@@ -1,10 +1,10 @@
 	<div class="container-fluid">
- 		<div class="row">
- 		<div class="col-6">
+ 		<div class="row vh-75">
+ 		<div class="col-12 col-xxl-6 d-flex align-items-center">
  		<br>
-		<img alt="" src="../assets/login.svg" class="ms-5 mt-4 ps-5">
+		<img alt="" src="../assets/login.svg" class="ms-5 mt-4 ps-5 d-flex align-items-center">
  		</div>
- 			<div class="col-6 d-flex justify-content-center d-flex align-items-center">
+ 			<div class="col-12 col-xxl-6 d-flex justify-content-center d-flex align-items-center">
  			<br>
 				<form class="row g-3 needs-validation d-flex align-items-center" novalidate action="<%=request.getContextPath()%>/LoginServlet" method="post">
 					<div class="col-md-5">
