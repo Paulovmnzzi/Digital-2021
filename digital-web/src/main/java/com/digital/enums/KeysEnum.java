@@ -3,8 +3,8 @@ package com.digital.enums;
 public enum KeysEnum {
 	
 	USUARIO("usuario"), 
-	USUARIO_PASSWORD_INVALIDO("Usuario/Password Inválido"),
-	USUARIO_SESSION_INVALIDA("Su sesión ha finalizado"),
+	USUARIO_PASSWORD_INVALIDO("Usuario/Password Invalido"),
+	USUARIO_SESSION_INVALIDA("Debe iniciar sesion"),
 	ERROR_GENERAL("error"), 
 	WARNING_GENERAL("warning"),
 	EXITO("exito"), 
