@@ -46,7 +46,7 @@ ArrayList<Categorias> categor = (ArrayList<Categorias>)cs.findAll();
 						</tr>
 					</thead>
 					<tbody>
-					<%	ArrayList<Producto> productoss = (ArrayList<Producto>)request.getAttribute(KeysEnum.LISTADO.name());
+					<%	ArrayList<Producto> productoss = (ArrayList<Producto>)request.getAttribute(KeysEnum.LISTADO.getViewKey());
 					if(productoss == null){
 						ProductoService ps = new ProductoServiceImpl();
 						productoss = (ArrayList)ps.findAll();

@@ -46,7 +46,7 @@ public class buscarProductoServlet extends HttpServlet{
 			}else {
 				lista = ps.findAllBy(claveBusqueda, columna);
 			}
-			req.setAttribute(KeysEnum.LISTADO.name(), lista);
+			req.setAttribute(KeysEnum.LISTADO.getViewKey(), lista);
 			
 			String orden = req.getParameter("orden");
 			if(orden != null) {

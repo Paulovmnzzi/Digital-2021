@@ -54,19 +54,19 @@ public class SessionFIlter implements Filter{
 
 			if (session == null) {
 				this.context.log("Unauthorized access request");
-				request.setAttribute(KeysEnum.ERROR_GENERAL.name(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
+				request.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
 				//res.sendRedirect(req.getContextPath()+"/login.jsp");
 				req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
 			} else {
 				
-				User loggedUser = (User)session.getAttribute(KeysEnum.USUARIO.name());
+				User loggedUser = (User)session.getAttribute(KeysEnum.USUARIO.getViewKey());
 				
 				if(loggedUser != null) {
 					// pass the request along the filter chain
 					chain.doFilter(request, response);
 				}else {
 					this.context.log("Unauthorized access request");
-					request.setAttribute(KeysEnum.ERROR_GENERAL.name(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
+					request.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
 					//res.sendRedirect(req.getContextPath()+"/login.jsp");
 					req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
 				}

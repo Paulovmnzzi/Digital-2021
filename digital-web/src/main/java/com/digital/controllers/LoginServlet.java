@@ -41,22 +41,22 @@ public class LoginServlet extends HttpServlet{
 		try {
 			
 			if("".equals(username) || "".equals(password)) {
-				req.setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/password vacios");
+				req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/password vacios");
 			}else {
 				
 				User user = login.findByUsername(username);
 				if(user != null) {	
 					if(password.equals(user.getPassword())) {
-							req.getSession().setAttribute(KeysEnum.USUARIO.name(), user);
+							req.getSession().setAttribute(KeysEnum.USUARIO.getViewKey(), user);
 							target = ViewEnums.LOGIN_SUCCESS;
 					}else {
-						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/Password es incorrecto");
+						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 					}
-					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), "El usuario/Password es incorrecto");
+					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 				}
 			}
 			} catch (SQLException | GenericException e) {
-				req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.name(), e.getMessage());
+				req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), e.getMessage());
 			}
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(target.getView());
