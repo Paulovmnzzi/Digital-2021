@@ -14,7 +14,7 @@ import com.digital.enums.ViewEnums;
 import com.digital.service.ProductoService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.ProductoServiceImpl;
-@WebServlet("/editarProducto")
+@WebServlet("/controllers/editarProducto")
 public class EditarProducto extends HttpServlet{
 
 	ProductoService ps = new ProductoServiceImpl();

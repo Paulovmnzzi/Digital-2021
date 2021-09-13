@@ -78,8 +78,8 @@ ArrayList<Categorias> categor = (ArrayList<Categorias>)cs.findAll();
 							<td><%=marca1%></td>
 							<td>
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										<a class="btn btn-danger me-md-2" href="<%=request.getContextPath()%>/EliminarProducto?id=<%=product.getId()%>" role="button">Eliminar</a> 
-										<a class="btn btn-primary" href="<%=request.getContextPath()%>/CargarEditarProducto?id=<%=product.getId()%>" role="button">Editar</a> 
+										<a class="btn btn-danger me-md-2" href="<%=request.getContextPath()%>/controllers/EliminarProducto?id=<%=product.getId()%>" role="button">Eliminar</a> 
+										<a class="btn btn-primary" href="<%=request.getContextPath()%>/controllers/CargarEditarProducto?id=<%=product.getId()%>" role="button">Editar</a> 
 									</div>
 							</td>
 						</tr>
@@ -90,7 +90,7 @@ ArrayList<Categorias> categor = (ArrayList<Categorias>)cs.findAll();
 			<div class="col-1"></div>
 			<div class="col-3 align-self-center mt-4">
 					<h3 class="align-self-center">Filtrar:</h3>
-					<form class="form-inline" action="<%=request.getContextPath()%>/buscarProducto" method="get">
+					<form class="form-inline" action="<%=request.getContextPath()%>/controllers/buscarProducto" method="get">
 					<input type="hidden" name="" value="" >
 						<div class="form-group">
 							<label>Titulo</label>

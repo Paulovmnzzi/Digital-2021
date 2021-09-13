@@ -19,7 +19,7 @@
 	<h1 class="pt-3">Registro</h1>
 	<br>
 	</div>
-	<form action="<%=request.getContextPath()%>/nuevoUsuario" method="post">
+	<form action="<%=request.getContextPath()%>/controllers/nuevoUsuario" method="post">
 		<div class="col-9">
 			<div class="input-group mb-3 mt-0">
 	  			<span class="input-group-text col-2"  id="basic-addon1">Usuario   </span>

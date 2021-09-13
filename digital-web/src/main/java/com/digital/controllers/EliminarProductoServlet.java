@@ -18,7 +18,7 @@ import com.digital.service.ProductoService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.ProductoServiceImpl;
 
-@WebServlet("/EliminarProducto")
+@WebServlet("/controllers/EliminarProducto")
 public class EliminarProductoServlet extends HttpServlet {
 
 	@Override

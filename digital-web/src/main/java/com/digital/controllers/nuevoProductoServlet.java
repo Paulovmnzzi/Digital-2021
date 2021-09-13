@@ -26,7 +26,7 @@ import com.digital.service.ServiceException;
 import com.digital.service.impl.CategoriasServiceImpl;
 import com.digital.service.impl.MarcasServiceImpl;
 import com.digital.service.impl.ProductoServiceImpl;
-@WebServlet("/nuevoProducto")
+@WebServlet("/controllers/nuevoProducto")
 public class nuevoProductoServlet extends HttpServlet {
 	
 	

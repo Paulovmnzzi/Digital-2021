@@ -25,7 +25,7 @@ import com.digital.service.impl.CategoriasServiceImpl;
 import com.digital.service.impl.MarcasServiceImpl;
 import com.digital.service.impl.ProductoServiceImpl;
 
-@WebServlet("/CargarEditarProducto")
+@WebServlet("/controllers/CargarEditarProducto")
 public class CargarEditarProductoServlet extends HttpServlet {
 
 	MarcasService ms = new MarcasServiceImpl();

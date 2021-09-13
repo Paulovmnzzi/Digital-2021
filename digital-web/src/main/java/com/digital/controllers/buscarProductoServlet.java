@@ -22,7 +22,7 @@ import com.digital.exception.GenericException;
 import com.digital.service.ProductoService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.ProductoServiceImpl;
-@WebServlet("/buscarProducto")
+@WebServlet("/controllers/buscarProducto")
 public class buscarProductoServlet extends HttpServlet{
 
 	@Override

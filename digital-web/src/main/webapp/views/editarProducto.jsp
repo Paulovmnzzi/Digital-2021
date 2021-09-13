@@ -22,7 +22,7 @@
 				<h1 class="pt-3">Editar Producto</h1>
 				<br>
 			</div>
-			<form action="<%=request.getContextPath()%>/editarProducto"
+			<form action="<%=request.getContextPath()%>/controllers/editarProducto"
 				method="get">
 				<div class="col-9">
 					<div class="input-group mb-3 mt-0">

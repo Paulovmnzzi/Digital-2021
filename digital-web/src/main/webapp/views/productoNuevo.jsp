@@ -19,7 +19,7 @@
 	<h1 class="pt-3">Nuevo Producto</h1>
 	<br>
 	</div>
-	<form action="<%=request.getContextPath()%>/nuevoProducto" method="get">
+	<form action="<%=request.getContextPath()%>/controllers/nuevoProducto" method="get">
 		<div class="col-9">
 			<div class="input-group mb-3 mt-0">
 	  			<span class="input-group-text col-2" id="basic-addon1">Titulo</span>

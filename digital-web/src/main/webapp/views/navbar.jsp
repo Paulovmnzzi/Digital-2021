@@ -18,7 +18,7 @@
             Productos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/nuevoProducto">Agregar producto</a></li>
+            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/controllers/nuevoProducto">Agregar producto</a></li>
             <li><a class="dropdown-item" href="<%=request.getContextPath()%>/views/listadoGeneral.jsp">Listado General</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Desesperación</a></li>
@@ -28,7 +28,7 @@
           <a class="nav-link" href="<%=request.getContextPath() %>/views/Registro.jsp" tabindex="-1" aria-disabled="false">Registrarse</a>
         </li>
       </ul>
-      <form action="<%=request.getContextPath()%>/buscarProducto" class="d-flex align-items-center mt-2" method="get">
+      <form action="<%=request.getContextPath()%>/controllers/buscarProducto" class="d-flex align-items-center mt-2" method="get">
         <input class="form-control me-2" type="search" name="<%=KeysEnum.CLAVE_BUSQUEDA.getViewKey() %>" placeholder="Search" aria-label="Search">
         <button class="btn btn-secondary btn-lg " type="submit">Buscar</button>
       </form>
