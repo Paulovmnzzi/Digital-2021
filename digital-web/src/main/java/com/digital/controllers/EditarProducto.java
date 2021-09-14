@@ -41,7 +41,7 @@ public class EditarProducto extends HttpServlet{
 		ViewEnums target = ViewEnums.LISTADO_GENERAL;
 		try {
 			ps.update(nuevoProducto);
-			req.setAttribute(KeysEnum.EXITO.getViewKey(), "Producto cargado con éxito");
+			req.setAttribute(KeysEnum.EXITO.getViewKey(), "Producto cargado con exito");
 			
 		} catch (ServiceException e) {
 			target = ViewEnums.EDITAR_PRODUCTO;

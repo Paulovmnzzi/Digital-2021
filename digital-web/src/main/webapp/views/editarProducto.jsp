@@ -43,7 +43,7 @@ Producto edit = (Producto) request.getAttribute(KeysEnum.PRODUCTO_EDITAR.getView
 						<span class="input-group-text col-2" id="basic-addon1">Código</span>
 						<input type="text" name="codigo" class="form-control"
 							aria-label="Username" value="<%=edit.getCodigo()%>"
-							aria-describedby="basic-addon1" required="required">
+							aria-describedby="basic-addon1" maxlength="6" required="required">
 					</div>
 					<div class="input-group mb-3">
 						<span class="input-group-text col-2" id="basic-addon1">Precio

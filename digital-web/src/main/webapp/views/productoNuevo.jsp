@@ -27,7 +27,7 @@
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Código</span>
-		  		<input type="text" required maxlength="8" name="codigo" class="form-control" placeholder="123564" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="text" required maxlength="6" name="codigo" class="form-control" placeholder="123564" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Precio - $</span>
