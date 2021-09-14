@@ -21,10 +21,10 @@ public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements Produc
 		
 		Long idAux = res.getLong(1);//id->long->1
 		String titulo = res.getString(2);
-		String codigo = res.getString(3);
-		Date fechaCreacion = res.getDate(4);
 		Double precio = res.getDouble(5);
+		Date fechaCreacion = res.getDate(4);
 		Long stock = res.getLong(6);
+		String codigo = res.getString(3);
 		Long marcasId = res.getLong(7);
 		Long categoriasId = res.getLong(8);
 		Producto productoNuevo = new Producto(idAux, titulo, codigo, fechaCreacion, precio, stock, marcasId, categoriasId);
@@ -34,16 +34,17 @@ public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements Produc
 
 	@Override
 	protected String getUpdateSQL() {
-		return "titulo=?, precio=?, stock=?, marcas_id=?,categorias_id=?";
+		return "titulo=?, codigo=?, precio=?, stock=?, marcas_id=?,categorias_id=?";
 	}
 
 	@Override
 	protected void update(PreparedStatement pst, Producto entity) throws SQLException {
 		pst.setString(1,entity.getTitulo());
-		pst.setDouble(2, entity.getPrecio());
-		pst.setLong(3, entity.getStock());
-		pst.setLong(4, entity.getMarcasId());
-		pst.setLong(5, entity.getCategoriasId());
+		pst.setString(2, entity.getCodigo());
+		pst.setDouble(3, entity.getPrecio());
+		pst.setLong(4, entity.getStock());
+		pst.setLong(5, entity.getMarcasId());
+		pst.setLong(6, entity.getCategoriasId());
 	}
 
 	@Override
