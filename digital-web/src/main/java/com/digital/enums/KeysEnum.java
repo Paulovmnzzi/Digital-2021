@@ -20,6 +20,7 @@ public enum KeysEnum {
 	LISTADO_OK("listadoOk"), 
 	TOTAL("total"), 
 	FILE_NAME("file_name"),
+	ALREADY_LOGGED("Usted ya se encuentra logueado")
 	;
 	
 	private String viewKey;

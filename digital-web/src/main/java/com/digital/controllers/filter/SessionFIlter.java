@@ -18,8 +18,9 @@ import javax.servlet.http.HttpSession;
 import com.digital.domain.User;
 import com.digital.enums.KeysEnum;
 import com.digital.enums.ViewEnums;
+
 @WebFilter(filterName = "/SessionFilter", urlPatterns = "/*")
-public class SessionFIlter implements Filter{
+public class SessionFIlter implements Filter {
 
 	private ServletContext context;
 
@@ -32,46 +33,61 @@ public class SessionFIlter implements Filter{
 			throws IOException, ServletException {
 
 		HttpServletRequest req = (HttpServletRequest) request;
-		//HttpServletResponse res = (HttpServletResponse) response;
+		// HttpServletResponse res = (HttpServletResponse) response;
 
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
-		
+
 		this.context.log("Requested Resource::" + uri);
 
-		HttpSession session = req.getSession(false);
+		HttpSession session = req.getSession(false); // el false es para que no cree una sesion
 
-		final List<String> validatePath = Arrays.asList(
-				contextPath+"/controllers/",
-				"/views/editarProducto.jsp", "/views/productoNuevo.jsp"
-		);
-				
-		boolean mustValidatePath = validatePath.stream()
-				.filter(x -> uri.contains(x) )
-				.count() > 0;
-		
-		if(mustValidatePath) {
+		final List<String> validatePath = Arrays.asList(contextPath + "/controllers/", "/views/editarProducto.jsp",
+				"/views/productoNuevo.jsp");
 
-			if (session == null) {
-				this.context.log("Unauthorized access request");
-				request.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
-				//res.sendRedirect(req.getContextPath()+"/login.jsp");
-				req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
+		final List<String> validateRegister = Arrays.asList(contextPath + "/views/Registro.jsp");
+
+		boolean mustValidatePath = validatePath.stream().filter(x -> uri.contains(x)).count() > 0;
+
+		boolean mustValidateRegister = validateRegister.stream().filter(x -> uri.contains(x)).count() > 0;
+
+		if (mustValidatePath | mustValidateRegister) {
+
+			if (mustValidatePath) {
+
+				if (session == null) {
+					this.context.log("Unauthorized access request");
+					request.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(),
+							KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
+					// res.sendRedirect(req.getContextPath()+"/login.jsp");
+					req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
+				} else {
+
+					User loggedUser = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey());
+
+					if (loggedUser != null) {
+
+						// pass the request along the filter chain
+						chain.doFilter(request, response);
+					} else {
+						this.context.log("Unauthorized access request");
+						req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
+						req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
+					}
+				}
 			} else {
-				
-				User loggedUser = (User)session.getAttribute(KeysEnum.USUARIO.getViewKey());
-				
-				if(loggedUser != null) {
+				User loggedUser = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey());
+
+				if (loggedUser == null) {
 					// pass the request along the filter chain
 					chain.doFilter(request, response);
-				}else {
-					this.context.log("Unauthorized access request");
-					request.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
-					//res.sendRedirect(req.getContextPath()+"/login.jsp");
-					req.getRequestDispatcher(ViewEnums.LOGIN.getView()).forward(request, response);
+				} else {
+					req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.ALREADY_LOGGED.getViewKey());
+					req.getRequestDispatcher(ViewEnums.LISTADO_GENERAL.getView()).forward(request, response);
 				}
 			}
-		}else {
+
+		} else {
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		}

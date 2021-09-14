@@ -17,7 +17,7 @@ import com.digital.service.LoginService;
 import com.digital.service.ServiceException;
 import com.digital.service.impl.LoginServiceImpl;
 
-@WebServlet("/nuevoUsuario")
+@WebServlet("/Register/nuevoUsuario")
 public class nuevoUsuarioServlet extends HttpServlet {
 
 	@Override
