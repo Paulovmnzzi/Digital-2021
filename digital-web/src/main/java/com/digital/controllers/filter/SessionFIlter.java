@@ -45,7 +45,7 @@ public class SessionFIlter implements Filter {
 		final List<String> validatePath = Arrays.asList(contextPath + "/controllers/", "/views/editarProducto.jsp",
 				"/views/productoNuevo.jsp");
 
-		final List<String> validateRegister = Arrays.asList(contextPath + "/views/Registro.jsp");
+		final List<String> validateRegister = Arrays.asList(contextPath + "/views/Registro.jsp", "/views/login.jsp");
 
 		boolean mustValidatePath = validatePath.stream().filter(x -> uri.contains(x)).count() > 0;
 
