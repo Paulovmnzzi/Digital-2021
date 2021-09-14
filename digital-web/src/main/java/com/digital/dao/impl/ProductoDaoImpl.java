@@ -66,7 +66,12 @@ public class ProductoDaoImpl extends JDBCBaseDaoImpl<Producto> implements Produc
 	}
 	
 	public List<Producto> findAllBy(String titulo, String columna) throws GenericException {
-		String sql = columna +" like '%"+titulo+"%'";
+		String sql = null;
+		if(columna.equals(ColumnEnum.PRECIO.getColumn())) {
+			sql = columna +" = "+titulo;
+		}else {
+			sql = columna +" like '%"+titulo+"%'";
+		}
 		return super.findAllBy(sql);
 	}
 
