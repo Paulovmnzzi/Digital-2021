@@ -53,6 +53,9 @@ public class LoginServlet extends HttpServlet{
 						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 					}
 					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
+				}else {
+					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
+
 				}
 			}
 			} catch (SQLException | GenericException e) {
