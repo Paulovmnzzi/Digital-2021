@@ -48,7 +48,6 @@ public class nuevoProductoServlet extends HttpServlet {
 		String stock = req.getParameter("stock");
 		
 		if(titulo != null) {
-		Long codigoAux = Long.parseLong(codigo);
 		Double precioAux = Double.parseDouble(precio);
 		Long stockAux = Long.parseLong(stock);
 		Long marcaAux = Long.parseLong(marca);

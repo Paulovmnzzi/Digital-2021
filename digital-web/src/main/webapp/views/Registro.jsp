@@ -27,11 +27,11 @@
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Contraseña</span>
-		  		<input type="password" required="required" name="newPassword" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="password" required="required" maxlength="12" name="newPassword" class="form-control" placeholder="Debe contener entre 4 y 12 caracteres" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Repita contraseña</span>
-		  		<input type="password" required="required" name="newPassword2" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="password" required="required"  maxlength="12"    name="newPassword2" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">email@mail.com</span>

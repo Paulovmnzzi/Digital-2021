@@ -23,19 +23,19 @@
 		<div class="col-9">
 			<div class="input-group mb-3 mt-0">
 	  			<span class="input-group-text col-2" id="basic-addon1">Titulo</span>
-		  		<input type="text" name="titulo" class="form-control" placeholder="Harry Potter" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="text" required name="titulo" class="form-control" placeholder="Harry Potter" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Código</span>
-		  		<input type="text" name="codigo" class="form-control" placeholder="123564" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="text" required maxlength="8" name="codigo" class="form-control" placeholder="123564" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Precio - $</span>
-		  		<input type="text" name="precio" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="number" required min="300" max="7000" name="precio" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-3">
 	  			<span class="input-group-text col-2" id="basic-addon1">Stock</span>
-		  		<input type="text" name="stock" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
+		  		<input type="number" required name="stock" class="form-control" placeholder="1500" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="form-group">
 		              <label for="country" class="form-label">Categoria</label>
