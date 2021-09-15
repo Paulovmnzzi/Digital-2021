@@ -7,7 +7,7 @@ String userName = "usuario";
 <nav
 	class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Librería
+		<a class="navbar-brand d-flex align-items-center" href="<%=request.getContextPath()%>/index.jsp">Librería
 			Central</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
@@ -19,10 +19,10 @@ String userName = "usuario";
 			class="collapse navbar-collapse d-flex justify-content-start me-2"
 			id="navbarSupportedContent">
 			<ul class="navbar-nav me-0 mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link active"
+				<li class="nav-item d-flex align-items-center"><a class="nav-link active d-flex align-items-center"
 					aria-current="page" href="<%=request.getContextPath()%>/index.jsp">Inicio</a>
 				</li>
-				<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown mt-1"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Productos </a>
@@ -35,7 +35,7 @@ String userName = "usuario";
 								General</a></li>
 						<li><hr class="dropdown-divider"></li>
 					</ul>
-				<li class="nav-item dropdown"><a
+				<li class="nav-item dropdown mx-3"><a
 					class="nav-link dropdown-toggle" href="#" tabindex="-1"
 					id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false" aria-disabled="false"><img alt=''
