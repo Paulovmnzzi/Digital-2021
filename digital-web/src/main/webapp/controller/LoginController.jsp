@@ -7,7 +7,7 @@
 	String password = request.getParameter("password");
 
 	LoginService login = new LoginServiceImpl();
-	User user = login.getUserByUserName(username);
+	User user = login.findByUsername(username);
 	if(user.getPassword().equals(password)){
 		out.print("exito");
 	}
