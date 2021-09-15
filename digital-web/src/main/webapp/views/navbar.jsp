@@ -35,7 +35,7 @@ String userName = "usuario";
 								General</a></li>
 						<li><hr class="dropdown-divider"></li>
 					</ul>
-				<li class="nav-item dropdown mx-3"><a
+				<li class="nav-item dropdown mt-1 mx-3"><a
 					class="nav-link dropdown-toggle" href="#" tabindex="-1"
 					id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false" aria-disabled="false"><img alt=''
