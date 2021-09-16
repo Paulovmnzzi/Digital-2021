@@ -16,10 +16,11 @@
 
 <%
 String value = "";
+String place = "";
 if(request.getAttribute(KeysEnum.ERROR_GENERAL.getViewKey()) != null){
-										value = (String) request.getAttribute(KeysEnum.ERROR_GENERAL.getViewKey());}
+										place = (String) request.getAttribute(KeysEnum.ERROR_GENERAL.getViewKey());}
 else {
-	value = "";
+	place = "";
 }
 										%>
 
@@ -45,13 +46,13 @@ else {
 							<div class="form-outline mb-4">
 								<input type="text" required="required" id="form2Example17"
 									name="username" class="form-control form-control-lg"
-									value="<%=value %>"
+									value="<%=value %>" placeholder="<%=place %>"
 									 /> <label
 									class="form-label" for="form2Example17">Usuario</label>
 							</div>
 
 							<div class="form-outline mb-4">
-								<input type="password" id="form2Example27" required="required"
+								<input type="password" id="form2Example27" required="required" placeholder="<%=place %>"
 									name="password" class="form-control form-control-lg" value="<%=value %>"/> <label
 									class="form-label" for="form2Example27">Password</label>
 							</div>
