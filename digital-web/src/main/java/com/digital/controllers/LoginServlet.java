@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet{
 				User user = login.findByUsername(username);
 				if(user != null) {	
 					if(password.equals(user.getPassword())) {
-							req.getSession().setAttribute(KeysEnum.USUARIO.getViewKey(), user);
+							req.setAttribute(KeysEnum.USUARIO.getViewKey(), user);
 							target = ViewEnums.LOGIN_SUCCESS;
 					}else {
 						req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
