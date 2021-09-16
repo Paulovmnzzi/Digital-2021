@@ -28,7 +28,6 @@ ArrayList<Categorias> categor = (ArrayList<Categorias>)cs.findAll();
 	<%@include file="/views/navbar.jsp"%>
 	<%@include file="/views/mensajeria.jsp"%>
 	
-	
 	<div class="container-fluid">
 	<div class="row">
 			<div class="col-8">
