@@ -26,7 +26,7 @@ public class LogoutControllerServlet extends HttpServlet {
 			req.getSession().setAttribute(KeysEnum.EXITO.getViewKey(), "Hasta la próxima " + usuario.getUsuario());
 			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}else {
-			req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "Usted no inició sesion");
+			req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
 			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}
 		

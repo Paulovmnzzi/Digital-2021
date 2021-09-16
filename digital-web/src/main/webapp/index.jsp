@@ -9,9 +9,9 @@
 </head>
 <body>
 	<%@include file="/views/navbar.jsp"%>
-	<%@include file="/views/mensajeria.jsp"%>
 	<div class="container mw-100 h-auto d-inline-block">
 	<div class="row h-25 d-flex justify-content-center">
+	<%@include file="/views/mensajeria.jsp"%>
 		<img alt="Welcome" src="<%=request.getContextPath() %>/assets/weolcome3.svg" class=" d-flex justify-content-center w-25 p-3 "  >
 	</div>
 		<div class="row d-flex justify-content-center">

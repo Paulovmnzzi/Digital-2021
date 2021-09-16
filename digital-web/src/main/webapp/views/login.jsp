@@ -6,7 +6,7 @@
 </head>
 <body>
 	<%@include file="/views/navbar.jsp"%>
-	<%@include file="/views/mensajeria.jsp" %>
+	<%@include file="/views/mensajeria.jsp"%>
 	<%@include file="/bootstrap/formlog.jsp"%>
  
 
