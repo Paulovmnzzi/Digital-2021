@@ -1,7 +1,7 @@
 <%@page import="com.digital.domain.User"%>
 <%@page import="com.digital.enums.KeysEnum"%>
 <%
-User usuario = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey());
+User usuario = (User) request.getAttribute(KeysEnum.USUARIO.getViewKey());
 String userName = "Usuario";
 %>
 <nav

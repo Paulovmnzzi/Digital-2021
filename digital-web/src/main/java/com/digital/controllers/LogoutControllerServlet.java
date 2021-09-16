@@ -19,7 +19,7 @@ public class LogoutControllerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		User usuario = (User)req.getSession().getAttribute(KeysEnum.USUARIO.getViewKey());
+		User usuario = (User)req.getAttribute(KeysEnum.USUARIO.getViewKey());
 		
 		if(usuario != null) {
 			req.setAttribute(KeysEnum.USUARIO.getViewKey(), null);

@@ -76,7 +76,7 @@ public class SessionFIlter implements Filter {
 					}
 				}
 			} else {
-				User loggedUser = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey());
+				User loggedUser = (User) req.getAttribute(KeysEnum.USUARIO.getViewKey());
 
 				if (loggedUser == null) {
 					// pass the request along the filter chain
