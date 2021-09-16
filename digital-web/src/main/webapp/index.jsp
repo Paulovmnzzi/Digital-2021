@@ -12,10 +12,12 @@
 	<div class="container mw-100 h-auto d-inline-block">
 	<div class="row h-25 d-flex justify-content-center">
 	<%@include file="/views/mensajeria.jsp"%>
-		<img alt="Welcome" src="<%=request.getContextPath() %>/assets/weolcome3.svg" class=" d-flex justify-content-center w-25 p-3 "  >
+	<div class="row pb-5 d-flex justify-content-center">
+		<img alt="Welcome" src="<%=request.getContextPath() %>/assets/weolcome3.svg" class="img-fluid h-75 d-inline-block w-50 p-3 d-flex justify-content-center pt-3 mt-3"  >
 	</div>
-		<div class="row d-flex justify-content-center">
-			<div class="card text-center w-50 p-3">
+	</div>
+		<div class="row d-flex justify-content-center pt-5">
+			<div class="col-11 col-lg-9 col-xl-8 col-xxl-5 card text-center p-3">
 				<div class="card-header bg-primary p-2 text-white ">Bienvenido</div>
 				<div class="card-body">
 					<h5 class="card-title">Librería central</h5>
