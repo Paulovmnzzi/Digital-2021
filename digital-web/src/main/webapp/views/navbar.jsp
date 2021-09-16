@@ -33,7 +33,6 @@ String userName = "Usuario";
 						<li><a class="dropdown-item"
 							href="<%=request.getContextPath()%>/views/listadoGeneral.jsp">Listado
 								General</a></li>
-						<li><hr class="dropdown-divider"></li>
 					</ul>
 				<li class="nav-item dropdown ms-0 ps-1 d-flex align-items-center "><a
 					class="nav-link dropdown-toggle d-flex align-items-center" href="#" tabindex="-1"
@@ -54,6 +53,7 @@ String userName = "Usuario";
 						<li><a class="dropdown-item"
 							href="<%=request.getContextPath()%>/views/Registro.jsp"
 							tabindex="-1" aria-disabled="false">Registrarse</a></li>
+							<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="<%=request.getContextPath() %>/Logout">Logout</a></li>
 					</ul>
 			</ul>
