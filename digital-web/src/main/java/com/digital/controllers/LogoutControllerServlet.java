@@ -13,7 +13,7 @@ import com.digital.enums.KeysEnum;
 import com.digital.enums.ViewEnums;
 import com.mysql.cj.Session;
 
-@WebServlet("Logout")
+@WebServlet("/Logout")
 public class LogoutControllerServlet extends HttpServlet {
 	
 	@Override
@@ -27,6 +27,7 @@ public class LogoutControllerServlet extends HttpServlet {
 			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}else {
 			req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "Usted no inició sesion");
+			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}
 		
 	}
