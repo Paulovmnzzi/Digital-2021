@@ -3,19 +3,26 @@
 <%@include file="/bootstrap/style.jsp"%>
 
 
-
 <title>Inicio de sesion</title>
 <link class="pe-2" rel="icon" type="image/png"
 	href="<%=request.getContextPath()%>/assets/favicon.ico">
 </head>
 <body>
 	<%@include file="/views/navbar.jsp"%>
-	<%@include file="/views/mensajeria.jsp"%>
-
 
 	<section class="vh-75">
 		<div class="container-fluid">
 			<div class="row d-flex">
+
+<%
+String value = "";
+if(request.getAttribute(KeysEnum.ERROR_GENERAL.getViewKey()) != null){
+										value = (String) request.getAttribute(KeysEnum.ERROR_GENERAL.getViewKey());}
+else {
+	value = "";
+}
+										%>
+
 				<div
 					class="col-12 col-lg-6 mt-3 text-black d-flex align-items-center d-flex justify-content-center">
 
@@ -27,20 +34,25 @@
 						<form style="width: 23rem;"
 							action="<%=request.getContextPath()%>/LoginServlet" method="post">
 
+							
+
+
 							<h3
 								class="fw-normal text-white py-1 mb-5 pb-2 border border-2 border border-dark rounded-pill
 								 d-flex justify-content-center d-flex align-items-center bg-dark"
 								style="letter-spacing: 1px;">Iniciar Sesion</h3>
 
 							<div class="form-outline mb-4">
-								<input type="text" id="form2Example17" name="username"
-									class="form-control form-control-lg" /> <label
+								<input type="text" required="required" id="form2Example17"
+									name="username" class="form-control form-control-lg"
+									value="<%=value %>"
+									 /> <label
 									class="form-label" for="form2Example17">Usuario</label>
 							</div>
 
 							<div class="form-outline mb-4">
-								<input type="password" id="form2Example27" name="password"
-									class="form-control form-control-lg" /> <label
+								<input type="password" id="form2Example27" required="required"
+									name="password" class="form-control form-control-lg" value="<%=value %>"/> <label
 									class="form-label" for="form2Example27">Password</label>
 							</div>
 
