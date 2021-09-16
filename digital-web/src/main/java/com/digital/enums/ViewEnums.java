@@ -10,7 +10,8 @@ public enum ViewEnums {
 	EDITAR_PRODUCTO("/views/editarProducto.jsp"), 
 	UPLOAD_PREVIEW("/views/preview.jsp"), 
 	RESULTADO_PREVIEW("/views/resultadoPreview.jsp"), 
-	REGISTRO("/views/Registro.jsp");
+	REGISTRO("/views/Registro.jsp"), 
+	INICIO("/index.jsp");
 	
 	private String view;
 	

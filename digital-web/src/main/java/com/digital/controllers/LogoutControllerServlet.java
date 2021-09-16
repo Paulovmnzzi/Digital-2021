@@ -1,0 +1,35 @@
+package com.digital.controllers;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.digital.domain.User;
+import com.digital.enums.KeysEnum;
+import com.digital.enums.ViewEnums;
+import com.mysql.cj.Session;
+
+@WebServlet("Logout")
+public class LogoutControllerServlet extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		User usuario = (User)req.getSession().getAttribute(KeysEnum.USUARIO.getViewKey());
+		
+		if(usuario != null) {
+			req.getSession().setAttribute(KeysEnum.USUARIO.getViewKey(), null);
+			req.getSession().setAttribute(KeysEnum.EXITO.getViewKey(), "Hasta la próxima " + usuario.getUsuario());
+			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
+		}else {
+			req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "Usted no inició sesion");
+		}
+		
+	}
+	
+	
+}

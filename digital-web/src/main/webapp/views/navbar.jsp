@@ -2,7 +2,7 @@
 <%@page import="com.digital.enums.KeysEnum"%>
 <%
 User usuario = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey());
-String userName = "usuario";
+String userName = "Usuario";
 %>
 <nav
 	class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
@@ -22,8 +22,8 @@ String userName = "usuario";
 				<li class="nav-item d-flex align-items-center"><a class="nav-link active d-flex align-items-center"
 					aria-current="page" href="<%=request.getContextPath()%>/index.jsp">Inicio</a>
 				</li>
-				<li class="nav-item dropdown mt-1"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				<li class="nav-item dropdown d-flex align-items-center"><a
+					class="nav-link dropdown-toggle " href="#" id="navbarDropdown"
 					role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Productos </a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,10 +35,10 @@ String userName = "usuario";
 								General</a></li>
 						<li><hr class="dropdown-divider"></li>
 					</ul>
-				<li class="nav-item dropdown mt-1 mx-3"><a
-					class="nav-link dropdown-toggle" href="#" tabindex="-1"
+				<li class="nav-item dropdown ms-0 ps-1 d-flex align-items-center "><a
+					class="nav-link dropdown-toggle d-flex align-items-center" href="#" tabindex="-1"
 					id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false" aria-disabled="false"><img alt=''
+					aria-expanded="false" aria-disabled="false"><img class="mx-1" alt=''
 						src="../assets/user.png"> <%
  if (usuario != null) {
  	userName = usuario.getUsuario();
@@ -54,7 +54,7 @@ String userName = "usuario";
 						<li><a class="dropdown-item"
 							href="<%=request.getContextPath()%>/views/Registro.jsp"
 							tabindex="-1" aria-disabled="false">Registrarse</a></li>
-						<li><a class="dropdown-item" href="#">Logout</a></li>
+						<li><a class="dropdown-item" href="<%=request.getContextPath() %>/Logout">Logout</a></li>
 					</ul>
 			</ul>
 		</div>
