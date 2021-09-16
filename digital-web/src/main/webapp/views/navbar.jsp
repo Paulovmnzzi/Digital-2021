@@ -6,7 +6,7 @@ String userName = "Usuario";
 %>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp">Librería
+		<a class="navbar-brand d-flex align-items-center" href="<%=request.getContextPath()%>/index.jsp">Librería
 			Central</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
@@ -21,7 +21,7 @@ String userName = "Usuario";
 					aria-current="page" href="<%=request.getContextPath()%>/index.jsp">Inicio</a>
 				</li>
 				<li class="nav-item dropdown d-flex align-items-center"><a
-					class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+					class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#"
 					id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false"> Productos </a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -34,10 +34,10 @@ String userName = "Usuario";
 						<li><hr class="dropdown-divider"></li>
 					</ul></li>
 				<li class="nav-item dropdown d-flex align-items-center"><a
-					class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+					class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#"
 					id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 					aria-expanded="false"> <img
-						class="mx-1 d-flex align-items-center" alt=''
+						class="mx-2 d-flex align-items-center" alt=''
 						src="../assets/user.png"> <%
  if (usuario != null) {
  	userName = usuario.getUsuario();
