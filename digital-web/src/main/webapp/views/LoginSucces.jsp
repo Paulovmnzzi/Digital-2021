@@ -13,7 +13,7 @@
 <div class="container-fluid">
 	<div class="row">
 	
-	<% User user = (User) session.getAttribute(KeysEnum.USUARIO.getViewKey()); %>
+	<% User user = (User) request.getAttribute(KeysEnum.USUARIO.getViewKey()); %>
 	<main>
 		  <div class="container py-4">
 		    <header class="pb-3 mb-4 border-bottom">
