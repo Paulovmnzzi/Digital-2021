@@ -50,16 +50,16 @@ public class LoginServlet extends HttpServlet{
 							req.getSession().setAttribute(KeysEnum.USUARIO.getViewKey(), user);
 							target = ViewEnums.LOGIN_SUCCESS;
 					}else {
-						req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
+						req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 					}
-					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
+					req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 				}else {
-					req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
+					req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), "El usuario/Password es incorrecto");
 
 				}
 			}
 			} catch (SQLException | GenericException e) {
-				req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), e.getMessage());
+				req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), e.getMessage());
 			}
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(target.getView());

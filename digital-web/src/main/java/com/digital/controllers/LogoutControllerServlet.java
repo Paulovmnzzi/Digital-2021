@@ -22,11 +22,11 @@ public class LogoutControllerServlet extends HttpServlet {
 		User usuario = (User)req.getSession().getAttribute(KeysEnum.USUARIO.getViewKey());
 		
 		if(usuario != null) {
-			req.getSession().setAttribute(KeysEnum.USUARIO.getViewKey(), null);
-			req.getSession().setAttribute(KeysEnum.EXITO.getViewKey(), "Hasta la próxima " + usuario.getUsuario());
+			req.setAttribute(KeysEnum.USUARIO.getViewKey(), null);
+			req.setAttribute(KeysEnum.EXITO.getViewKey(), "Hasta la próxima " + usuario.getUsuario());
 			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}else {
-			req.getSession().setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
+			req.setAttribute(KeysEnum.ERROR_GENERAL.getViewKey(), KeysEnum.USUARIO_SESSION_INVALIDA.getViewKey());
 			req.getServletContext().getRequestDispatcher(ViewEnums.INICIO.getView()).forward(req, resp);
 		}
 		
